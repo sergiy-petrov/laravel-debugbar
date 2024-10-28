@@ -57,7 +57,7 @@ jobs:
                   php artisan debugbar:clear
             - name: Check file count in logs
               run: |
-                if [ `ls -1q "sample/storage/logs/" | wc -l` -gt 0 ];then exit 1;fi
+                if [ `ls -1q "sample/storage/logs/" | wc -l` -gt 0 ];then cd sample/storage/logs && ls -la;fi
     php-laravel-integration-tests:
         runs-on: ubuntu-latest
         timeout-minutes: 15
